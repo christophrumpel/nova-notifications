@@ -5,6 +5,7 @@ With this [Nova](https://nova.laravel.com) tool:
 - You can send out notifications.
 - All sent or failed notifications will be stored in the database.
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/christophrumpel/nova-notifications.svg?style=flat-square)](https://packagist.org/packages/christophrumpel/nova-notifications)
 
 ![screenshot of nova notifications overview](/images/screenshot_overview.png)
 ![screenshot of nova notifications send](/images/screenshot_send.png)
