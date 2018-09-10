@@ -90,7 +90,7 @@ If you want to create a new notification with custom objects, then this approach
 ### Testing
 
 ``` bash
-composer test
+phpunit tests
 ```
 
 ### Changelog
