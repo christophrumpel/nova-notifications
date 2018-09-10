@@ -9,6 +9,9 @@ With this [Nova](https://nova.laravel.com) tool:
 ![screenshot of nova notifications overview](/images/screenshot_overview.png)
 ![screenshot of nova notifications send](/images/screenshot_send.png)
 
+## Requirements
+
+In order to use this package, you need to have an installation of Laravel with Laravel nova setup.
 
 ## Installation
 
