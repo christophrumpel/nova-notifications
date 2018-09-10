@@ -2824,7 +2824,7 @@ var render = function() {
           attrs: { loading: _vm.initialLoading }
         },
         [
-          _vm.notificationClasses
+          _vm.notificationClasses.length
             ? _c(
                 "table",
                 {

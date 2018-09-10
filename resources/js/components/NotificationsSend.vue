@@ -12,7 +12,7 @@
 
         <loading-card :loading="initialLoading" class="flex flex-wrap py-8 mb-8 text-center">
 
-            <table cellpadding="0" cellspacing="0" class="table w-full" v-if="notificationClasses">
+            <table cellpadding="0" cellspacing="0" class="table w-full" v-if="notificationClasses.length">
                 <thead>
                 <tr>
                     <th>Name</th>
