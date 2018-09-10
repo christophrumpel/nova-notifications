@@ -1,4 +1,4 @@
-# A Laravel Nova tool to handle Laravel Notifications
+# A Laravel Nova Tool for Handling Laravel Notifications
 
 With this [Nova](https://nova.laravel.com) tool:
 - You can overview all sent and failed notifications.
@@ -83,7 +83,7 @@ If you don't see a newly created notification class, try running `composer dump-
 
 Since you notifications often depend on parameters, this package tries to help you with that. All found constructor parameters will be shown when you try to send a notification. If one of the dependencies is an Eloquent Model, you will get a list with all of the items to choose from.
 
-![screenshot of nova notifications send](/images/screenshot_send.png)
+![screenshot of nova notifications send](/images/screenshot_parameters.png)
 
 If you want to create a new notification with custom objects, then this approach will not work for now. If you have a custom use-case, let me know about it, and we can think of a solution.
 
@@ -97,14 +97,10 @@ composer test
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
 ### Security
 
 If you discover any security-related issues, please email me at c.rumpel@kabsi.at instead of using the issue tracker.
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The MIT License (MIT).
