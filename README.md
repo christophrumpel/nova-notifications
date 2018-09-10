@@ -67,6 +67,8 @@ return [
 
 ```
 
+You also need to run `php artisan migrate` on your Laravel application so that the new notifications table will be created.
+
 # Usage
 
 After installing the tool, you should see the new sidebar navigation item for `Notifications`.
