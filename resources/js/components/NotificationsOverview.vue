@@ -1,6 +1,6 @@
 <template>
     <div>
-        <heading class="mb-6">Nova Notifications</heading>
+        <heading class="mb-6">{{__('Nova Notifications')}}</heading>
         <loading-card :loading="initialLoading" class="flex flex-wrap py-8 mb-8 text-center">
             <notification-card header="Notifications Sent" :value="notificationsCount"></notification-card>
             <notification-card header="Notifications Failed" :value="notificationsFailedCount"></notification-card>

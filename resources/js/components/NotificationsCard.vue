@@ -4,7 +4,7 @@
 
         <div>
             <p class="text-2xl">
-                {{value}}
+                {{ value }}
             </p>
         </div>
     </div>

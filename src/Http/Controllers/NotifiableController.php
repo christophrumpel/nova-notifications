@@ -51,7 +51,7 @@ class NotifiableController extends ApiController
         return [
             'data' => $modelClasses,
             'filter' => [
-                'name' => 'Notifiables',
+                'name' => __('Notifiables'),
                 'options' => $options,
             ],
         ];

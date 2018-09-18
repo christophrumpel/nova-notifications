@@ -8,22 +8,22 @@
                     ID
                 </th>
                 <th class="">
-                    Notification
+                    {{__('Notification')}}
                 </th>
                 <th class="">
-                    Notifiable Type
+                    {{__('Notifiable Type')}}
                 </th>
                 <th class="">
-                    Notifiable ID
+                    {{__('Notifiable ID')}}
                 </th>
                 <th class="">
-                    Channel
+                    {{__('Channel')}}
                 </th>
                 <th class="">
-                    Sent
+                    {{__('Sent')}}
                 </th>
                 <th class="">
-                    Date
+                    {{__('Date')}}
                 </th>
             </tr>
             </thead>

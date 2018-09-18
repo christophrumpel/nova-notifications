@@ -1,6 +1,6 @@
 <template>
     <div>
-        <heading class="mb-6">Send Notification</heading>
+        <heading class="mb-6">{{__('Send Notification')}}</heading>
 
         <notifications-param-modal
                 v-if="selectedNotification"
@@ -15,8 +15,8 @@
             <table cellpadding="0" cellspacing="0" class="table w-full" v-if="notificationClasses.length">
                 <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Parameters</th>
+                    <th>{{__('Name')}}</th>
+                    <th>{{__('Parameters')}}</th>
                     <th></th>
                 </tr>
                 </thead>
@@ -31,7 +31,7 @@
                     </td>
                     <td>
                         <button class="btn btn-default btn-primary" @click="selectNotification(notificationClass)">
-                            Select
+                            {{__('Select')}}
                         </button>
                     </td>
                 </tr>
@@ -39,7 +39,7 @@
             </table>
 
             <div v-else>
-                <p class="m-4">You don't have any notification classes yet.</p>
+                <p class="m-4">{{__("You don't have any notification classes yet.")}}</p>
             </div>
         </loading-card>
 
@@ -107,16 +107,16 @@
             sendNotification() {
 
                 if (!this.selectedNotification.name.length) {
-                    return this.$toasted.show('Notification has not been chosen.', {type: 'error'});
+                    return this.$toasted.show(__('Notification has not been chosen.'), {type: 'error'});
                 }
 
                 Nova.request().post('/nova-vendor/nova-notifications/notifications/send', this.formObj)
                     .then((response) => {
-                        this.$toasted.show('Notification has been sent!', {type: 'success'});
+                        this.$toasted.show(__('Notification has been sent!'), {type: 'success'});
                         this.selectedNotification = null;
                     }).catch(error => {
                     console.log(error);
-                    this.$toasted.show('There has been an error!', {type: 'error'});
+                    this.$toasted.show(__('There has been an error!'), {type: 'error'});
                 })
             },
             setParams(params) {
