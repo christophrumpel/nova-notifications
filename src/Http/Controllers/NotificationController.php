@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Notification;
 
 class NotificationController extends ApiController
 {
-
     public function index()
     {
         return DB::table('nova_notifications')
@@ -30,7 +29,6 @@ class NotificationController extends ApiController
             return $param['value'];
         });
 
-
         if (! class_exists($notificationClass)) {
             return response('', 400);
         }
@@ -48,4 +46,3 @@ class NotificationController extends ApiController
         $this->respondSuccess();
     }
 }
-

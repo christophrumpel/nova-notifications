@@ -7,7 +7,6 @@ use Christophrumpel\NovaNotifications\ClassFinder;
 
 class NotificationClassesControllerTest extends TestCase
 {
-
     protected $testNotificationClassName;
 
     protected $classFinder;
@@ -22,8 +21,6 @@ class NotificationClassesControllerTest extends TestCase
 
         $this->classFinder = Mockery::mock(ClassFinder::class);
         $this->app->instance(ClassFinder::class, $this->classFinder);
-
-
     }
 
     /**
@@ -31,7 +28,6 @@ class NotificationClassesControllerTest extends TestCase
      **/
     public function it_returns_given_notification_classes()
     {
-
         $this->classFinder->shouldReceive('find')
             ->withArgs(['Christophrumpel\NovaNotifications\Tests\Notifications'])
             ->andReturn(collect([$this->testNotificationClassName => 'path/to/file']));
@@ -51,5 +47,4 @@ class NotificationClassesControllerTest extends TestCase
                 ],
             ]);
     }
-
 }

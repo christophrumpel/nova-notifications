@@ -8,7 +8,8 @@ use ReflectionMethod;
 use ReflectionParameter;
 use Christophrumpel\NovaNotifications\ClassFinder;
 
-class NotificationClassesController extends  ApiController {
+class NotificationClassesController extends ApiController
+{
     /**
      * @var ClassFinder
      */
@@ -19,14 +20,13 @@ class NotificationClassesController extends  ApiController {
      *
      * @param ClassFinder $classFinder
      */
-    public function __construct(ClassFinder $classFinder) {
-
+    public function __construct(ClassFinder $classFinder)
+    {
         $this->classFinder = $classFinder;
     }
 
     public function index()
     {
-
         return $this->classFinder->find(config('nova-notifications.notificationNamespace'))
             ->map(function ($path, $className) {
                 return $className;
@@ -41,7 +41,6 @@ class NotificationClassesController extends  ApiController {
                         ->getName();
 
                     if (class_exists($paramTypeName)) {
-
                         $class = new ReflectionClass($paramTypeName);
                         $fullyClassName = $class->getName();
 
@@ -53,7 +52,6 @@ class NotificationClassesController extends  ApiController {
                                 ];
                             });
                         }
-
                     }
 
                     return [
@@ -69,5 +67,4 @@ class NotificationClassesController extends  ApiController {
                 return $notificationClassInfo;
             });
     }
-
 }

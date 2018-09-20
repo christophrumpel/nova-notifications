@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\DB;
 
 class NotificationStatsController
 {
-
     public function index()
     {
         return [
@@ -27,5 +26,4 @@ class NotificationStatsController
             ->where('failed', true)
             ->count();
     }
-
 }
