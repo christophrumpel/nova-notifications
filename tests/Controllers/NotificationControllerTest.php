@@ -8,7 +8,6 @@ use Christophrumpel\NovaNotifications\Tests\Models\TestModel;
 
 class NotificationControllerTest extends TestCase
 {
-
     protected $notificationClassName;
 
     public function setUp()
@@ -65,7 +64,6 @@ class NotificationControllerTest extends TestCase
     /** @test * */
     public function it_sends_a_notification()
     {
-
         $this->disableExceptionHandling();
 
         $notificationData = [
@@ -97,7 +95,6 @@ class NotificationControllerTest extends TestCase
 
         $this->post('nova-vendor/nova-notifications/notifications/send', $notificationData)
             ->assertStatus(404);
-
     }
 
     /** @test * */
@@ -120,6 +117,5 @@ class NotificationControllerTest extends TestCase
 
         $this->post('nova-vendor/nova-notifications/notifications/send', $notificationData)
             ->assertStatus(422);
-
     }
 }

@@ -6,7 +6,6 @@ use Illuminate\Support\Collection;
 
 class ClassFinder
 {
-
     /**
      * @param string $nameSpace
      * @return Collection
@@ -20,5 +19,4 @@ class ClassFinder
                 return starts_with($key, $nameSpace);
             });
     }
-
 }

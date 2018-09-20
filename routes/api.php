@@ -22,4 +22,3 @@ Route::post('/notifications/send', NotificationController::class.'@send');
 Route::get('/notifications/stats', NotificationStatsController::class.'@index');
 Route::get('/notifications/classes', NotificationClassesController::class.'@index');
 Route::get('/notifiables', NotifiableController::class.'@index');
-

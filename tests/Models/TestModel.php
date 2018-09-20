@@ -8,5 +8,4 @@ use Illuminate\Notifications\Notifiable;
 class TestModel extends Model
 {
     use Notifiable;
-
 }
