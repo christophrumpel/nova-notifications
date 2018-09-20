@@ -22,6 +22,12 @@ class ToolServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'nova-notifications');
 
+        $this->publishes([
+            __DIR__.'/../resources/lang' => resource_path('lang/vendor/nova-notifications'),
+        ], 'nova-notifications-lang');
+
+        $this->loadJsonTranslationsFrom(resource_path('lang/vendor/nova-notifications'));
+
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
         $this->app->booted(function () {

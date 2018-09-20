@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <heading :level="2" class="mt-6 mb-6">Send Notification To</heading>
+        <heading :level="2" class="mt-6 mb-6">{{__('Send Notification To')}}</heading>
 
         <notification-param-input
                 v-model="formObj"

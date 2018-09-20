@@ -7,12 +7,12 @@
                 <heading :level="1" class="mt-6 mb-6">{{ selectedNotification.name}}</heading>
 
                 <!-- START Notifiable Select -->
-                <heading :level="2" class="mt-6 mb-6">Send Notification To</heading>
+                <heading :level="2" class="mt-6 mb-6">{{__('Send Notification To')}}</heading>
                 <div class="md:flex md:items-center mb-6" v-if="formObj.notifiable">
                     <div class="md:w-1/3">
                         <label class="block text-grey font-bold md:text-right mb-1 md:mb-0 pr-4"
                                for="notifiable-item">
-                            Notifiable
+                            {{__('Notifiable')}}
                         </label>
                     </div>
 
@@ -41,7 +41,7 @@
                     <div class="md:w-1/3">
                         <label class="block text-grey font-bold md:text-right mb-1 md:mb-0 pr-4"
                                for="notifiable">
-                            Notifiable Item
+                            {{__('Notifiable Item')}}
                         </label>
                     </div>
 
@@ -69,7 +69,8 @@
 
                 <!-- START Notification Parameters -->
                 <heading :level="2" class="mt-6 mb-6" v-if="selectedNotification.parameters.length">
-                    Define Notification Parameters
+                    {{__('Define Notification Parameters')}}
+
                 </heading>
                 <div class="md:flex md:items-center mb-6" v-if="selectedNotification.parameters.length"
                      v-for="(param, index) in selectedNotification.parameters">

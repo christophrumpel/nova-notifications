@@ -38,7 +38,7 @@ class NotificationController extends ApiController
         try {
             $notification = $params ? new $notificationClass(...$params) : new $notificationClass();
         } catch (\Throwable $e) {
-            return response('The notification could not be created with the provided information', 422);
+            return response(__('The notification could not be created with the provided information'), 422);
         }
 
         $notifiable = str_replace('.', '\\', $request->get('notifiable')['name']);
