@@ -2,12 +2,11 @@
 
 namespace Christophrumpel\NovaNotifications\Http\Controllers;
 
-use Christophrumpel\NovaNotifications\ClassFinder;
 use ReflectionClass;
+use Christophrumpel\NovaNotifications\ClassFinder;
 
 class NotifiableController extends ApiController
 {
-
     /**
      * @var ClassFinder
      */
@@ -20,7 +19,6 @@ class NotifiableController extends ApiController
      */
     public function __construct(ClassFinder $classFinder)
     {
-
         $this->classFinder = $classFinder;
     }
 
@@ -29,7 +27,6 @@ class NotifiableController extends ApiController
         $modelClasses = $this->classFinder->find(config('nova-notifications.modelNamespace'))
             ->filter(function ($path, $className) {
                 $classInfo = new ReflectionClass($className);
-
 
                 return $classInfo->isSubclassOf('Illuminate\Database\Eloquent\Model') && in_array('Illuminate\Notifications\Notifiable',
                         $classInfo->getTraitNames());
@@ -56,6 +53,4 @@ class NotifiableController extends ApiController
             ],
         ];
     }
-
 }
-

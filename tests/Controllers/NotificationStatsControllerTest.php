@@ -6,7 +6,6 @@ use Christophrumpel\NovaNotifications\NovaNotification;
 
 class NotificationStatsControllerTest extends TestCase
 {
-
     /** @test * */
     public function it_returns_empty_stats_for_no_nova_notifications()
     {
