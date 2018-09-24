@@ -53,7 +53,7 @@
     export default {
         components: {NotificationsParamModal},
         data: () => ({
-            notificationClasses: null,
+            notificationClasses: [],
             initialLoading: true,
             error: false,
             selectedNotification: null,
