@@ -112,11 +112,11 @@
 
                 Nova.request().post('/nova-vendor/nova-notifications/notifications/send', this.formObj)
                     .then((response) => {
-                        this.$toasted.show(__('Notification has been sent!'), {type: 'success'});
+                        this.$toasted.show('Notification has been sent!', {type: 'success'});
                         this.selectedNotification = null;
                     }).catch(error => {
                     console.log(error);
-                    this.$toasted.show(__('There has been an error!'), {type: 'error'});
+                    this.$toasted.show('There has been an error!', {type: 'error'});
                 })
             },
             setParams(params) {

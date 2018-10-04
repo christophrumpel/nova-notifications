@@ -65,6 +65,6 @@ class NotificationClassesController extends ApiController
                 $notificationClassInfo->parameters = $params;
 
                 return $notificationClassInfo;
-            });
+            })->values();
     }
 }

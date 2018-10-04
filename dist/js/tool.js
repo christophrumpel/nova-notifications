@@ -1576,11 +1576,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
 
             Nova.request().post('/nova-vendor/nova-notifications/notifications/send', this.formObj).then(function (response) {
-                _this4.$toasted.show(__('Notification has been sent!'), { type: 'success' });
+                _this4.$toasted.show('Notification has been sent!', { type: 'success' });
                 _this4.selectedNotification = null;
             }).catch(function (error) {
                 console.log(error);
-                _this4.$toasted.show(__('There has been an error!'), { type: 'error' });
+                _this4.$toasted.show('There has been an error!', { type: 'error' });
             });
         },
         setParams: function setParams(params) {
