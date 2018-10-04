@@ -28,9 +28,9 @@ class NotificationClassesControllerTest extends TestCase
      **/
     public function it_returns_given_notification_classes()
     {
-        $this->classFinder->shouldReceive('find')
-            ->withArgs(['Christophrumpel\NovaNotifications\Tests\Notifications'])
-            ->andReturn(collect([$this->testNotificationClassName => 'path/to/file']));
+        $this->classFinder->shouldReceive('findByExtending')
+            ->withArgs(['Illuminate\Notifications\Notification'])
+            ->andReturn(collect([$this->testNotificationClassName]));
 
         $this->get('nova-vendor/nova-notifications/notifications/classes')
             ->assertSuccessful()
