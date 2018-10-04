@@ -35,7 +35,7 @@ class NotificationClassesControllerTest extends TestCase
         $this->get('nova-vendor/nova-notifications/notifications/classes')
             ->assertSuccessful()
             ->assertJson([
-                $this->testNotificationClassName => [
+                [
                     'name' => $this->testNotificationClassName,
                     'parameters' => [
                         [
