@@ -25,12 +25,13 @@ class ClassFinder
         $composer = require base_path('vendor/autoload.php');
 
         return collect($composer->getClassMap())->filter(function ($value, $key) use ($nameSpace) {
-                return starts_with($key, $nameSpace);
-            });
+            return starts_with($key, $nameSpace);
+        });
     }
 
     /**
-     * Find class who are extending a specific class
+     * Find classes which are extending a specific class.
+     *
      * @param string $className
      * @return Collection
      */
@@ -50,6 +51,7 @@ class ClassFinder
                 }
 
                 return $classInfo->isSubclassOf($className);
-            })->keys();
+            })
+            ->keys();
     }
 }
