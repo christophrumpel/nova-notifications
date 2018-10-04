@@ -27,10 +27,7 @@ class NotificationClassesController extends ApiController
 
     public function index()
     {
-        return $this->classFinder->find(config('nova-notifications.notificationNamespace'))
-            ->map(function ($path, $className) {
-                return $className;
-            })
+        return $this->classFinder->findByExtending('Illuminate\Notifications\Notification')
             ->map(function ($className) {
                 $classInfo = new ReflectionMethod($className, '__construct');
                 $notificationClassInfo = new stdClass();

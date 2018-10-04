@@ -106,6 +106,7 @@
             },
             sendNotification() {
 
+                console.log(this.selectedNotification);
                 if (!this.selectedNotification.name.length) {
                     return this.$toasted.show(__('Notification has not been chosen.'), {type: 'error'});
                 }
