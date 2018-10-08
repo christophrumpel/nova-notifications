@@ -38,35 +38,6 @@ public function tools()
 }
 ```
 
-Then publish the config file:
-
-``` bash
-php artisan vendor:publish --provider="Christophrumpel\NovaNotifications\ToolServiceProvider"
-```
-
-In there, you can define the namespaces of you Eloquent Models and your Notifications. The models will be used to provide you with a list of notifiable models. The notifications will be shown as a list when you want to send one.
-
-```php
-<?php
-
-return [
-
-    /*
-     * The namespace of your Eloquent models.
-     * They will be used to check for notifiable models.
-     */
-    'modelNamespace' => 'App',
-
-    /*
-     * The namespace of your Laravel notifications.
-     * They will be used to send out notifications.
-     */
-    'notificationNamespace' => 'App\Notifications',
-
-];
-
-```
-
 You also need to run `php artisan migrate` on your Laravel application so that the new notifications table will be created.
 
 # Usage
@@ -81,7 +52,7 @@ Usually, only the notifications sent through the `database` channel will be stor
 
 ## Send
 
-On the `Send` page you can see all of your created notification classes. This only works if you have selected the correct namespace for your stored notifications in the config file. Normally, they are stored under `App\Notifications`.
+On the `Send` page you can see all of your created notification classes.
 
 If you don't see a newly created notification class, try running `composer dump-autoload`.
 
