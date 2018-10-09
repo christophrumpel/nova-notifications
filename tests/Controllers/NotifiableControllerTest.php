@@ -15,8 +15,8 @@ class NotifiableControllerTest extends TestCase
         $classFinder = Mockery::mock(ClassFinder::class);
         $this->app->instance(ClassFinder::class, $classFinder);
 
-        $classFinder->shouldReceive('find')
-            ->withArgs([config('nova-notifications.modelNamespace')])
+        $classFinder->shouldReceive('findByExtending')
+            ->withArgs(['Illuminate\Database\Eloquent\Model'])
             ->andReturn(collect([]));
 
         $response = $this->get('nova-vendor/nova-notifications/notifiables')
@@ -36,15 +36,15 @@ class NotifiableControllerTest extends TestCase
         $classFinder = Mockery::mock(ClassFinder::class);
         $this->app->instance(ClassFinder::class, $classFinder);
 
-        $classFinder->shouldReceive('find')
-            ->withArgs([config('nova-notifications.modelNamespace')])
-            ->andReturn(collect([$testModelClassName => 'path/to/file']));
+        $classFinder->shouldReceive('findByExtending')
+            ->withArgs(['Illuminate\Database\Eloquent\Model'])
+            ->andReturn(collect([$testModelClassName]));
 
-        $response = $this->get('nova-vendor/nova-notifications/notifiables')
+        $this->get('nova-vendor/nova-notifications/notifiables')
             ->assertSuccessful()
             ->assertJson([
                 'data' => [
-                    $testModelClassName => [
+                    [
                         'name' => $testModelClassNameDots,
                         'options' => [],
                     ],
@@ -52,7 +52,7 @@ class NotifiableControllerTest extends TestCase
                 'filter' => [
                     'name' => 'Notifiables',
                     'options' => [
-                        $testModelClassName => [
+                        [
                             'name' => $testModelClassNameDots,
                         ],
                     ],
