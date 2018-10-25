@@ -34,7 +34,7 @@ class ToolServiceProvider extends ServiceProvider
             NovaNotification::create([
                 'notification' => get_class($event->notification),
                 'notifiable_type' => get_class($event->notifiable),
-                'notifiable_id' => $event->notifiable->id,
+                'notifiable_id' => $event->notifiable->id ?? '?',
                 'channel' => $event->channel,
                 'failed' => false,
             ]);
@@ -44,7 +44,7 @@ class ToolServiceProvider extends ServiceProvider
             NovaNotification::create([
                 'notification' => get_class($event->notification),
                 'notifiable_type' => get_class($event->notifiable),
-                'notifiable_id' => $event->notifiable->id,
+                'notifiable_id' => $event->notifiable->id ?? '',
                 'channel' => $event->channel,
                 'failed' => true,
             ]);
