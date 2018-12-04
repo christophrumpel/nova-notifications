@@ -31,26 +31,34 @@ class ClassFinder
     /**
      * Find classes which are extending a specific class.
      *
-     * @param string $className
+     * @param string $classNameToFind
+     * @param array $namespacesToSearch
      * @return Collection
      */
-    public function findByExtending(string $className): Collection
+    public function findByExtending(string $classNameToFind, array $namespacesToSearch): Collection
     {
         $composer = require base_path('vendor/autoload.php');
 
         return collect($composer->getClassMap())
-            ->filter(function ($value, $key) {
-                return starts_with($key, app()->getNamespace());
+            ->keys()
+            ->filter(function ($className) {
+                return $className !== 'Illuminate\Filesystem\Cache';
             })
-            ->filter(function ($value, $key) use ($className) {
+            ->filter(function ($className) use ($namespacesToSearch) {
+                return collect($namespacesToSearch)
+                    ->filter(function ($namespace) use ($className) {
+                        return starts_with($className, $namespace);
+                    })
+                    ->count();
+            })
+            ->filter(function ($className) use ($classNameToFind) {
                 try {
-                    $classInfo = new ReflectionClass($key);
-                } catch (\ReflectionException $e) {
+                    $classInfo = new ReflectionClass($className);
+                } catch (\Exception $e) {
                     return false;
                 }
 
-                return $classInfo->isSubclassOf($className);
-            })
-            ->keys();
+                return $classInfo->isSubclassOf($classNameToFind);
+            });
     }
 }

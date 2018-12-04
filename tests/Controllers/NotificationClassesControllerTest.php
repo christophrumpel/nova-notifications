@@ -29,7 +29,7 @@ class NotificationClassesControllerTest extends TestCase
     public function it_returns_given_notification_classes()
     {
         $this->classFinder->shouldReceive('findByExtending')
-            ->withArgs(['Illuminate\Notifications\Notification'])
+            ->withArgs(['Illuminate\Notifications\Notification', config('nova-notifications.notificationNamespaces')])
             ->andReturn(collect([$this->testNotificationClassName]));
 
         $this->get('nova-vendor/nova-notifications/notifications/classes')
