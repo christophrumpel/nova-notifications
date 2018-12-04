@@ -86,6 +86,10 @@
         },
         methods: {
             selectNotification(notification) {
+                if(!this.notifiables.data.length) {
+                    return this.$toasted.show('No notifiables could be found.', {type: 'error'});
+                }
+                
                 this.selectedNotification = notification;
             },
             deselectNotification() {

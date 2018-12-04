@@ -27,14 +27,22 @@ class NotificationClassesController extends ApiController
 
     public function index()
     {
-        return $this->classFinder->findByExtending('Illuminate\Notifications\Notification')
+        return $this->classFinder->findByExtending('Illuminate\Notifications\Notification', config('nova-notifications.notificationNamespaces'))
             ->map(function ($className) {
-                $classInfo = new ReflectionMethod($className, '__construct');
+                try {
+                    $classInfo = new ReflectionMethod($className, '__construct');
+                } catch (\ReflectionException $e) {
+                    return [
+                        'name' => $className,
+                        'parameters' => [],
+                    ];
+                }
+
                 $notificationClassInfo = new stdClass();
                 $notificationClassInfo->name = $classInfo->class;
 
                 $params = collect($classInfo->getParameters())->map(function (ReflectionParameter $param) {
-                    $paramTypeName = $param->getType()
+                    $paramTypeName = is_null($param->getType()) ? 'unknown' : $param->getType()
                         ->getName();
 
                     if (class_exists($paramTypeName)) {
@@ -53,8 +61,7 @@ class NotificationClassesController extends ApiController
 
                     return [
                         'name' => $param->getName(),
-                        'type' => $param->getType()
-                            ->getName(),
+                        'type' => $paramTypeName,
                         'options' => $options ?? '',
                     ];
                 });

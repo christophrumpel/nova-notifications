@@ -24,7 +24,7 @@ class NotifiableController extends ApiController
 
     public function index()
     {
-        $modelClasses = $this->classFinder->findByExtending('Illuminate\Database\Eloquent\Model')
+        $modelClasses = $this->classFinder->findByExtending('Illuminate\Database\Eloquent\Model', config('nova-notifications.notifiableNamespaces'))
             ->filter(function ($className) {
                 $classInfo = new ReflectionClass($className);
 

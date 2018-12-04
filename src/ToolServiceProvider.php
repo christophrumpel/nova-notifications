@@ -19,6 +19,10 @@ class ToolServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'nova-notifications');
 
         $this->publishes([
+            __DIR__.'/../config/nova-notifications.php' => config_path('nova-notifications.php'),
+        ], 'config');
+
+        $this->publishes([
             __DIR__.'/../resources/lang' => resource_path('lang/vendor/nova-notifications'),
         ], 'nova-notifications-lang');
 
@@ -74,6 +78,6 @@ class ToolServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->mergeConfigFrom(__DIR__.'/../config/nova-notifications.php', 'nova-notifications');
     }
 }

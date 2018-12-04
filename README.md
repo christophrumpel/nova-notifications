@@ -21,6 +21,30 @@ First install the  [Nova](https://nova.laravel.com) package via composer:
 ```bash
 composer require christophrumpel/nova-notifications
 ```
+Then publish the config file(optional):
+ ``` bash
+php artisan vendor:publish --provider="Christophrumpel\NovaNotifications\ToolServiceProvider"
+```
+ In there, you can define where to look for the Notification classes, as well as the notifiable models.
+ ```php
+ <?php
+ return [
+     /*
+      * The namespaces you want to check for Notification classes.
+      */
+     'notifiableNamespaces' => [
+         'App',
+     ],
+     /*
+      * The namespaces you want to check for Notifiable classes.
+      */
+     'notificationNamespaces' => [
+         'App\Notifications',
+         'Illuminate',
+     ],
+ ];
+ ```
+ 
 
 Next up, you must register the tool via the `tools` method of the `NovaServiceProvider`.
 

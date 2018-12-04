@@ -16,7 +16,7 @@ class NotifiableControllerTest extends TestCase
         $this->app->instance(ClassFinder::class, $classFinder);
 
         $classFinder->shouldReceive('findByExtending')
-            ->withArgs(['Illuminate\Database\Eloquent\Model'])
+            ->withArgs(['Illuminate\Database\Eloquent\Model', ['App']])
             ->andReturn(collect([]));
 
         $response = $this->get('nova-vendor/nova-notifications/notifiables')
@@ -37,7 +37,7 @@ class NotifiableControllerTest extends TestCase
         $this->app->instance(ClassFinder::class, $classFinder);
 
         $classFinder->shouldReceive('findByExtending')
-            ->withArgs(['Illuminate\Database\Eloquent\Model'])
+            ->withArgs(['Illuminate\Database\Eloquent\Model', ['App']])
             ->andReturn(collect([$testModelClassName]));
 
         $this->get('nova-vendor/nova-notifications/notifiables')
