@@ -1,4 +1,5 @@
 <?php
+
 return [
     /*
      * The namespaces you want to check for Notification classes.

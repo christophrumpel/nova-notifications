@@ -16,7 +16,8 @@ class NotifiableControllerTest extends TestCase
         $this->app->instance(ClassFinder::class, $classFinder);
 
         $classFinder->shouldReceive('findByExtending')
-            ->withArgs(['Illuminate\Database\Eloquent\Model', ['App']])            ->andReturn(collect([]));
+            ->withArgs(['Illuminate\Database\Eloquent\Model', ['App']])
+            ->andReturn(collect([]));
 
         $response = $this->get('nova-vendor/nova-notifications/notifiables')
             ->assertSuccessful();

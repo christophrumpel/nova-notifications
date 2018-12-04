@@ -34,7 +34,7 @@ class NotificationClassesController extends ApiController
                 } catch (\ReflectionException $e) {
                     return [
                         'name' => $className,
-                        'parameters' => []
+                        'parameters' => [],
                     ];
                 }
 
@@ -42,7 +42,6 @@ class NotificationClassesController extends ApiController
                 $notificationClassInfo->name = $classInfo->class;
 
                 $params = collect($classInfo->getParameters())->map(function (ReflectionParameter $param) {
-
                     $paramTypeName = is_null($param->getType()) ? 'unknown' : $param->getType()
                         ->getName();
 
