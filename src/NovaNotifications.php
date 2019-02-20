@@ -14,8 +14,8 @@ class NovaNotifications extends Tool
      */
     public function boot()
     {
-        Nova::script('nova-notifications', __DIR__.'/../dist/js/tool.js');
-        Nova::style('nova-notifications', __DIR__.'/../dist/css/tool.css');
+        Nova::script('christophrumpel-nova-notifications', __DIR__.'/../dist/js/tool.js');
+        Nova::style('christophrumpel-nova-notifications', __DIR__.'/../dist/css/tool.css');
     }
 
     /**
