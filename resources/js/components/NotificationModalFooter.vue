@@ -21,7 +21,6 @@
         }),
         methods: {
             handleSubmit: function() {
-                console.log(this.selectedNotification);
                 this.$root.$emit('submitModal', this.selectedNotification.parameters, this.formObj)
             },
             handleCancel: function() {
