@@ -81,7 +81,6 @@
             });
 
             this.$root.$on('notifiableSelected', (event) => {
-                console.log(event);
             })
         },
         methods: {
@@ -119,12 +118,10 @@
                         this.$toasted.show('Notification has been sent!', {type: 'success'});
                         this.selectedNotification = null;
                     }).catch(error => {
-                    console.log(error);
                     this.$toasted.show('There has been an error!', {type: 'error'});
                 })
             },
             setParams(params) {
-                console.log(params);
             }
         }
     }
