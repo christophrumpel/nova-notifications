@@ -11,7 +11,7 @@ class NotificationClassesControllerTest extends TestCase
 
     protected $classFinder;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 

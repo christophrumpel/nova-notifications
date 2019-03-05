@@ -10,7 +10,7 @@ class NotificationControllerTest extends TestCase
 {
     protected $notificationClassName;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 

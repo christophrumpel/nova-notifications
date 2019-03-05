@@ -11,7 +11,7 @@ use Christophrumpel\NovaNotifications\ToolServiceProvider;
 
 abstract class TestCase extends Orchestra
 {
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         Route::middlewareGroup('nova', []);
@@ -45,14 +45,16 @@ abstract class TestCase extends Orchestra
 
         $app['config']->set('nova-notifications.modelNamespace', 'Christophrumpel\NovaNotifications\Tests\Models');
 
-        $app['config']->set('nova-notifications.notificationNamespace', 'Christophrumpel\NovaNotifications\Tests\Notifications');
+        $app['config']->set('nova-notifications.notificationNamespace',
+            'Christophrumpel\NovaNotifications\Tests\Notifications');
     }
 
     // Framework-supplied test case methods snipped for brevity
     // Use this version if you're on PHP 7
     protected function disableExceptionHandling()
     {
-        $this->app->instance(ExceptionHandler::class, new class extends Handler {
+        $this->app->instance(ExceptionHandler::class, new class extends Handler
+        {
             public function __construct()
             {
             }
