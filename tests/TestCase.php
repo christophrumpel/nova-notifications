@@ -53,8 +53,7 @@ abstract class TestCase extends Orchestra
     // Use this version if you're on PHP 7
     protected function disableExceptionHandling()
     {
-        $this->app->instance(ExceptionHandler::class, new class extends Handler
-        {
+        $this->app->instance(ExceptionHandler::class, new class extends Handler {
             public function __construct()
             {
             }
