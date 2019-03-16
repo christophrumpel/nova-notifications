@@ -4,25 +4,25 @@
         <table cellpadding="0" cellspacing="0" class="table w-full">
             <thead>
             <tr>
-                <th class="">
+                <th class="pointer" @click="sortBy('id')">
                     ID
                 </th>
-                <th class="">
+                <th class="pointer" @click="sortBy('notification')">
                     {{__('Notification')}}
                 </th>
-                <th class="">
+                <th class="pointer" @click="sortBy('notifiable_type')">
                     {{__('Notifiable Type')}}
                 </th>
-                <th class="">
+                <th class="pointer" @click="sortBy('notifiable_id')">
                     {{__('Notifiable ID')}}
                 </th>
-                <th class="">
+                <th class="pointer" @click="sortBy('channel')">
                     {{__('Channel')}}
                 </th>
-                <th class="">
+                <th class="pointer" @click="sortBy('failed')">
                     {{__('Sent')}}
                 </th>
-                <th class="">
+                <th class="pointer" @click="sortBy('created_at')">
                     {{__('Date')}}
                 </th>
             </tr>
@@ -64,6 +64,13 @@
                     this.initialLoading = false;
                 })
             },
+            sortBy(field) {
+                this.notifications = this.notifications.sort((a, b) => {
+                    if(a[field] < b[field]) { return -1; }
+                    if(a[field] > b[field]) { return 1; }
+                    return 0;
+                });
+            },
         },
         components: {
             IconSuccess,
@@ -72,6 +79,8 @@
     }
 </script>
 
-<style>
-    /* Scoped Styles */
+<style lang="css" scoped>
+    .pointer {
+        cursor: pointer;
+    }
 </style>
