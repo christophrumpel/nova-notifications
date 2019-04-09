@@ -11,6 +11,7 @@ class NotificationController extends ApiController
     public function index()
     {
         return DB::table('nova_notifications')
+            ->orderBy('id','desc')
             ->get();
     }
 
