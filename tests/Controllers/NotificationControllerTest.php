@@ -40,8 +40,8 @@ class NotificationControllerTest extends TestCase
             ->assertSuccessful()
             ->assertJsonCount(2)
             ->assertJson([
-                $notifications[0]->toArray(),
                 $notifications[1]->toArray(),
+                $notifications[0]->toArray(),
             ]);
     }
 
