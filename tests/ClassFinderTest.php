@@ -1,6 +1,6 @@
 <?php
 
-namespace Christophrumpel\NovaNotifications\Tests;
+namespace Christophrumpel\NovaNotifications\tests;
 
 use Christophrumpel\NovaNotifications\ClassFinder;
 
@@ -33,5 +33,4 @@ class ClassFinderTest extends TestCase
 
         $this->assertInstanceOf('Illuminate\Support\Collection', $response);
     }
-
 }
