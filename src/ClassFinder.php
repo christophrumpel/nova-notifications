@@ -9,7 +9,7 @@ use Illuminate\Support\Collection;
 class ClassFinder
 {
     /**
-     * @return mixedt
+     * @return mixed
      */
     public function getNamespace()
     {
