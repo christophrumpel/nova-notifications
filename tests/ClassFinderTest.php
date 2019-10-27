@@ -3,7 +3,6 @@
 namespace Christophrumpel\NovaNotifications\Tests;
 
 use Christophrumpel\NovaNotifications\ClassFinder;
-use Mockery;
 
 class ClassFinderTest extends TestCase
 {
@@ -12,7 +11,7 @@ class ClassFinderTest extends TestCase
      **/
     public function it_find_classes()
     {
-        $this->app->setBasePath(__DIR__ . '/..');
+        $this->app->setBasePath(__DIR__ .'/..');
 
         $classFinder = app(ClassFinder::class);
 

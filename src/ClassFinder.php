@@ -2,14 +2,14 @@
 
 namespace Christophrumpel\NovaNotifications;
 
-use Illuminate\Support\Str;
 use ReflectionClass;
+use Illuminate\Support\Str;
 use Illuminate\Support\Collection;
 
 class ClassFinder
 {
     /**
-     * @return mixed
+     * @return mixedt
      */
     public function getNamespace()
     {
