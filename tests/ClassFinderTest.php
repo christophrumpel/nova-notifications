@@ -33,4 +33,5 @@ class ClassFinderTest extends TestCase
 
         $this->assertInstanceOf('Illuminate\Support\Collection', $response);
     }
+
 }

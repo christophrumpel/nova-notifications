@@ -62,5 +62,4 @@ class ClassFinder
                 return $classInfo->isSubclassOf($classNameToFind);
             });
     }
-    
 }
