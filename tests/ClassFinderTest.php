@@ -11,7 +11,7 @@ class ClassFinderTest extends TestCase
      **/
     public function it_find_classes()
     {
-        $this->app->setBasePath(__DIR__ .'/..');
+        $this->app->setBasePath(__DIR__.'/..');
 
         $classFinder = app(ClassFinder::class);
 
@@ -25,7 +25,7 @@ class ClassFinderTest extends TestCase
      **/
     public function it_find_classes_which_are_extending_a_specific_class()
     {
-        $this->app->setBasePath(__DIR__ . '/..');
+        $this->app->setBasePath(__DIR__.'/..');
 
         $classFinder = app(ClassFinder::class);
 
