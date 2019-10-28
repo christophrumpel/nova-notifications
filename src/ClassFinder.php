@@ -3,6 +3,7 @@
 namespace Christophrumpel\NovaNotifications;
 
 use ReflectionClass;
+use Illuminate\Support\Str;
 use Illuminate\Support\Collection;
 
 class ClassFinder
@@ -24,7 +25,7 @@ class ClassFinder
         $composer = require base_path('vendor/autoload.php');
 
         return collect($composer->getClassMap())->filter(function ($value, $key) use ($nameSpace) {
-            return starts_with($key, $nameSpace);
+            return Str::startsWith($key, $nameSpace);
         });
     }
 
@@ -47,7 +48,7 @@ class ClassFinder
             ->filter(function ($className) use ($namespacesToSearch) {
                 return collect($namespacesToSearch)
                     ->filter(function ($namespace) use ($className) {
-                        return starts_with($className, $namespace);
+                        return Str::startsWith($className, $namespace);
                     })
                     ->count();
             })
