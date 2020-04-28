@@ -2,8 +2,8 @@
 
 namespace Christophrumpel\NovaNotifications\Tests;
 
-use Mockery;
 use Christophrumpel\NovaNotifications\ClassFinder;
+use Mockery;
 
 class NotificationClassesControllerTest extends TestCase
 {

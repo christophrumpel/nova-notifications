@@ -2,8 +2,8 @@
 
 namespace Christophrumpel\NovaNotifications\Http\Controllers;
 
-use ReflectionClass;
 use Christophrumpel\NovaNotifications\ClassFinder;
+use ReflectionClass;
 
 class NotifiableController extends ApiController
 {

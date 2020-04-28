@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Christophrumpel\NovaNotifications\Http\Controllers\NotifiableController;
+use Christophrumpel\NovaNotifications\Http\Controllers\NotificationClassesController;
 use Christophrumpel\NovaNotifications\Http\Controllers\NotificationController;
 use Christophrumpel\NovaNotifications\Http\Controllers\NotificationStatsController;
-use Christophrumpel\NovaNotifications\Http\Controllers\NotificationClassesController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------

@@ -2,9 +2,9 @@
 
 namespace Christophrumpel\NovaNotifications\Tests;
 
-use Illuminate\Support\Facades\Notification;
 use Christophrumpel\NovaNotifications\NovaNotification;
 use Christophrumpel\NovaNotifications\Tests\Models\TestModel;
+use Illuminate\Support\Facades\Notification;
 
 class NotificationControllerTest extends TestCase
 {

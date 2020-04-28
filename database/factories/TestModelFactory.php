@@ -1,7 +1,7 @@
 <?php
 
-use Faker\Generator as Faker;
 use Christophrumpel\NovaNotifications\Tests\Models\TestModel;
+use Faker\Generator as Faker;
 
 /*
 |--------------------------------------------------------------------------

@@ -2,11 +2,11 @@
 
 namespace Christophrumpel\NovaNotifications\Http\Controllers;
 
-use stdClass;
+use Christophrumpel\NovaNotifications\ClassFinder;
 use ReflectionClass;
 use ReflectionMethod;
 use ReflectionParameter;
-use Christophrumpel\NovaNotifications\ClassFinder;
+use stdClass;
 
 class NotificationClassesController extends ApiController
 {

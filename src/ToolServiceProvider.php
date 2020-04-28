@@ -2,10 +2,10 @@
 
 namespace Christophrumpel\NovaNotifications;
 
+use Christophrumpel\NovaNotifications\Http\Middleware\Authorize;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Christophrumpel\NovaNotifications\Http\Middleware\Authorize;
 
 class ToolServiceProvider extends ServiceProvider
 {

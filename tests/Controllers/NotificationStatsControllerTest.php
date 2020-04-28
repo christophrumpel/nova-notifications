@@ -21,7 +21,7 @@ class NotificationStatsControllerTest extends TestCase
             ->create();
 
         factory(NovaNotification::class)->create([
-           'failed' => true,
+            'failed' => true,
         ]);
 
         $this->get('nova-vendor/nova-notifications/notifications/stats')
