@@ -1,3 +1,5 @@
+> :warning: **Note**: This repo is not maintained right now.
+
 # A Laravel Nova Tool for Handling Laravel Notifications
 
 With this [Nova](https://nova.laravel.com) tool:
