@@ -2,12 +2,12 @@
 
 namespace Christophrumpel\NovaNotifications\Tests;
 
+use Christophrumpel\NovaNotifications\ToolServiceProvider;
 use Exception;
+use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Support\Facades\Route;
 use Orchestra\Testbench\Exceptions\Handler;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Illuminate\Contracts\Debug\ExceptionHandler;
-use Christophrumpel\NovaNotifications\ToolServiceProvider;
 
 abstract class TestCase extends Orchestra
 {

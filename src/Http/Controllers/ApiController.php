@@ -2,8 +2,8 @@
 
 namespace Christophrumpel\NovaNotifications\Http\Controllers;
 
-use ReflectionClass;
 use Illuminate\Http\Response;
+use ReflectionClass;
 
 abstract class ApiController
 {
